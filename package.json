@@ -13,5 +13,9 @@
 	"markdown": "*",
 	"passport": "*",
 	"passport-google": "*"
+  },
+  "repository": { 
+	  "type" : "git",
+	  "url" : "http://github.com/isaacs/npm.git"
   }
 }
