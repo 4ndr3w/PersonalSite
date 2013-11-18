@@ -1,0 +1,63 @@
+[
+	{
+		"title":"Fast Linux Deployment Toolkit",
+		"url": "https://github.com/4ndr3w/FLDT",
+		"description":"it works",
+		"tags": ["linux"]
+	},
+	{
+		"title":"PaperPlane",
+		"description":"Node.js+Socket.io link sharing application for sharing links and files in the classroom.",
+		"tags": ["node"]
+	},
+	{
+		"title": "OnetoOne",
+		"description": "Combination inventory and ticket system for my school's 1:1 laptop program.",
+		"tags": ["php"]
+	},
+	{
+		"title": "MusicBox",
+		"description": "Node.js powered multiuser jukebox. Allows for jukebox-style control over a shared music source via HTTP.",
+		"tags": ["node"]
+	},
+	{
+		"title": "CareerDaySorting",
+		"description": "Integrated signup + scheduling system for my school's career day.",
+		"tags": ["php"]
+	},
+	{
+		"title": "Aztec",
+		"description": "An extendable HTTP server written in Java. Also bundled as a library for imbedding into applications.",
+		"tags": ["java"]
+	},
+	{
+		"title": "Sputnik",
+		"description": "2D platformer utilizing 2dEnginev2",
+		"tags": ["java"]
+	},
+	{
+		"title": "2dEnginev2",
+		"description": "My improved engine for rendering 2D games. Improved from v1, this verion has support for sprites, particle effects, and an improved API for managing objects in a scene.",
+		"tags": ["java"]
+	},
+	{
+		"title": "Pong",
+		"description": "My first OpenGL game. Featured rectangles, circles, and multiplayer",
+		"tags": ["java"]
+	},
+	{
+		"title": "2dEngine",
+		"description": "My old engine for rendering 2D games. Features included drawing shapes and gravity!",
+		"tags": ["java"]
+	},
+	{
+		"title": "Unofficial FRC FMS",
+		"description": "A reimplementaion of the FIRST Robotics Competition Field Management System protocol in Java",
+		"tags": ["php"]
+	},
+	{
+		"title": "PowerBot",
+		"description": "Modular PHP IRC bot. This project was my first endevour into sockets, as well as my first project with a large codebase.",
+		"tags": ["php"]
+	}
+]

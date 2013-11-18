@@ -1,0 +1,67 @@
+<html>
+<head>
+	<title>Andrew Lobos</title>
+	<link href="stylesheets/style.css" rel="stylesheet">
+</head>
+
+<body>
+	<div class="container">
+		<div class="navbar">
+			<a href="/"><div class="navbar-name">Andrew Lobos</div></a>
+			
+			<div class="navbar-items">
+				<a href="#"><span class="navbar-item selected">code</span></a><a href="/blog"><span class="navbar-item">blog</span></a><a href="/resume"><span class="navbar-item">r&eacute;sum&eacute;</span></a>
+			</div>
+			
+			<div class="content">
+				An overview of my significant projects. You can find all of them and more on <a href="http://www.github.com/4ndr3w">GitHub</a>.<br>
+				<span class="halfbreak"></span>
+				
+				<% 
+				for(var i = 0; i < projects.length; i++)
+				{
+					project = projects[i];
+				%>
+					<hr />
+					<div class="project">
+						<a class="project-title" href="@project.url"><%= project.title %></a>
+						<div class="project-tags">
+						<%
+						for ( var a = 0; a < project.tags.length; a++ )
+						{
+							if ( project.tags[a] == "node" )
+							{
+							%>
+								<span class="tag tag-node">Node.js</span>
+							<%
+							}
+							else if ( project.tags[a] == "linux" )
+							{
+							%>
+								<span class="tag tag-linux">Linux</span>
+							<%
+							}
+							else if ( project.tags[a] == "php" )
+							{
+							%>
+								<span class="tag tag-php">PHP</span>
+							<%
+							}
+							else if ( project.tags[a] == "java" )
+							{
+							%>
+								<span class="tag tag-java">Java</span>
+							<%
+							}
+						}
+						%>
+						</div>
+						<div class="project-description"><%= project.description %></div>
+					</div>
+					<% } %>
+			</div>
+		</div>
+		<br><br><br>
+	</div>
+	
+</body>

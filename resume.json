@@ -1,0 +1,53 @@
+[
+	{
+		"type": "list",
+		"title": "Internships",
+		"items": 
+		[
+			{
+				"title": "Penn Manor High School - Information Technology Intern",
+				"description": "Currently assisting with many district IT projects, including the deployment of computers for the school’s 1:1 laptop program.",
+				"period": "Summer 2011-2013"
+			},
+			{
+				"title": "St. Onge Company",
+				"description": "Assisted in building and optomizing a Sharepoint web application.",
+				"period": "Summer 2013"
+			}
+		]
+	},
+	
+	{
+		"type": "paragraph",
+		"title": "Programming Experience",
+		"text": "I am extremely comfortable writing software in <span class=\"tag tag-java\">Java</span>, <span class=\"tag tag-node\">Node.js</span>, and <span class=\"tag tag-php\">PHP</span> for any platform while using Git or SVN for revision control. Additionally, I am also fimilar with C++, Objective-C, Python, and C#."
+	},
+	
+	{
+		"type": "list",
+		"title": "Competitions",
+		"items":
+		[
+			{
+				"title": "<i>FIRST</i> Tech Challenge Team 4977",
+				"description": "Team captain and programming/controls captain.",
+				"period": "2012-Present"
+			},
+			{
+				"title": "<i>FIRST</i> Robotics Competition Team 225",
+				"description": "Team co-captain and programming/controls captain.",
+				"period": "2011-Present"
+			},
+			{
+				"title": "Technology Student Association",
+				"description": "",
+				"period": "2011-Present"
+			},
+			{
+				"title": "Team America Rocketry Challenge",
+				"description": "",
+				"period": "2009-2012"
+			}
+		]
+	}
+]

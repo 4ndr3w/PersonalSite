@@ -1,0 +1,28 @@
+<html>
+<head>
+	<title>Andrew Lobos</title>
+	<link href="/stylesheets/style.css" rel="stylesheet">
+	<link href="/stylesheets/blog.css" rel="stylesheet">
+</head>
+
+<body>
+	<div class="container">
+		<div class="navbar">
+			<a href="/"><div class="navbar-name">Admin</div></a>
+			
+			<div class="navbar-items">
+				<a href="/admin/code"><span class="navbar-item">code</span></a><a href="/admin/blog"><span class="navbar-item">blog</span></a></a>
+			</div>
+
+			
+			<div class="content">
+				<form action="/admin/blog/update" method="post">
+					<input type="text" placeholder="Title" name="title" value="<%= post.title %>"><br>
+					<textarea name="content" rows="20" cols="100"><%= post.content %></textarea><br>
+					<input type="hidden" name="id" value="<%= post.id %>">
+					<input type="submit" name="action" value="<%= action %>">
+				</form>
+			</div>
+		</div>
+	</div>
+</body>

@@ -1,0 +1,86 @@
+<html>
+<head>
+	<title>Andrew Lobos</title>
+	<link href="/stylesheets/style.css" rel="stylesheet">
+</head>
+
+<body>
+	<div class="container">
+		<div class="navbar">
+			<a href="/"><div class="navbar-name">Admin</div></a>
+			
+			<div class="navbar-items">
+				<a href="/admin/code"><span class="navbar-item">code</span></a><a href="/admin/blog"><span class="navbar-item">blog</span></a></a>
+			</div>
+			
+			<div class="content">
+				<% if ( view == "list") { %>
+					<a href="/admin/code/add">Add Project</a>
+					<br>
+					<span class="halfbreak"></span>
+				
+					<% 
+					for(var i = 0; i < projects.length; i++)
+					{
+						project = projects[i];
+					%>
+						<hr />
+						<div class="project">
+							<a class="project-title" href="@project.url"><%= project.title %></a>
+							<div class="project-tags">
+							<%
+							for ( var a = 0; a < project.tags.length; a++ )
+							{
+								if ( project.tags[a] == "node" )
+								{
+								%>
+									<span class="tag tag-node">Node.js</span>
+								<%
+								}
+								else if ( project.tags[a] == "linux" )
+								{
+								%>
+									<span class="tag tag-linux">Linux</span>
+								<%
+								}
+								else if ( project.tags[a] == "php" )
+								{
+								%>
+									<span class="tag tag-php">PHP</span>
+								<%
+								}
+								else if ( project.tags[a] == "java" )
+								{
+								%>
+									<span class="tag tag-java">Java</span>
+								<%
+								}
+							}
+							%>
+							</div>
+							<div class="project-description"><%= project.description %><br><a href="/admin/code/edit/<%= project.id %>">Edit Project</a> - <a href="/admin/code/delete/<%= project.id %>">Delete Project</a></div>
+						</div>
+						<% 
+						}
+					} 
+					else
+					{
+					%>
+					<form action="/admin/code" method="post">
+						<input type="hidden" name="id" value="<%= project.id %>">
+						<input type="text" placeholder="Title" name="title" value="<%= project.title %>"><br>
+						<textarea name="description" cols="50" rows="10"><%= project.description %></textarea><br>
+						<input type="text" placeholder="Tags (Space separated)" name="tags" value="<% for (var i = 0; i < project.tags.length; i++ ) { %><%= project.tags[i] %> <% } %>">
+						<br>
+						<input type="submit" name="action" value="<%= view %>">
+					</form>
+					<%
+					}
+					
+					%>
+			</div>
+		</div>
+		<br><br><br>
+	</div>
+	
+</body>

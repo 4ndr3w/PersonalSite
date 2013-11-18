@@ -1,0 +1,52 @@
+<html>
+<head>
+	<title>Andrew Lobos</title>
+	<link href="stylesheets/style.css" rel="stylesheet">
+</head>
+
+<body>
+	<div class="container">
+		<div class="navbar">
+			<a href="/"><div class="navbar-name">Andrew Lobos</div></a>
+			
+			<div class="navbar-items">
+				<a href="/code"><span class="navbar-item">code</span></a><a href="/blog"><span class="navbar-item">blog</span></a><a href="#"><span class="navbar-item selected">r&eacute;sum&eacute;</span></a>
+			</div>
+			
+			<div class="content">
+				<%
+				for(var i = 0; i < resume.length; i++)
+				{
+					var item = resume[i];
+					if ( item.type == "list" )
+					{
+					%>
+						<span class="miniheader"><%- item.title %></span>
+						<%
+						for (var z = 0; z < item.items.length; z++)
+						{
+							listItem = item.items[z];
+						%>
+							<div class="experience">
+								<span class="experience-title"><%- listItem.title %></span>
+								<div class="experience-length"><%- listItem.period %></div>
+								<div class="experience-description"><%- listItem.description %></div>
+							</div>
+					<%
+						}
+					}
+					else if ( item.type == "paragraph" )
+					{
+					%>
+						<span class="miniheader"><%- item.title %></span>
+						<p>
+							<%- item.text %>
+						</p>
+					<% } %>
+					<hr />
+				<% } %>
+			</div>
+		</div>
+	</div>
+	<br><br>
+</body>
