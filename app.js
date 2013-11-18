@@ -15,7 +15,7 @@ var db = require("mongoose").connect('mongodb://localhost/personalsite');
 var passport = require("passport");
 var PassportGoogle = require('passport-google').Strategy;
 
-var adminList = JSON.parse(fs.readFileSync("admins.json"));
+var adminList = JSON.parse(fs.readFileSync(path.join(__dirname, "admins.json")));
 var app = express();
 
 
@@ -116,7 +116,7 @@ app.post("/admin/blog/update", admin.blog.update);
 app.get("/login", passport.authenticate("google"));
 app.get('/login/return', passport.authenticate('google', { successRedirect: '/admin', failureRedirect: '/failed' }));
 
-http.createServer(app).listen(app.get('port'), function(){
+module.exports = http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
 });
 
