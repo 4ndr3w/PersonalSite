@@ -40,9 +40,10 @@ app.set('view engine', 'ejs');
 
 app.use(express.favicon());
 app.use(express.logger('dev'));
-app.use(express.bodyParser());
+app.use(express.urlencoded());
+app.use(express.json());
 app.use(express.methodOverride());
-app.use( express.cookieParser() );
+app.use(express.cookieParser());
 app.use(express.session({secret:(Math.random()*100).toString()}));
 app.use(passport.initialize());
 app.use(passport.session());
