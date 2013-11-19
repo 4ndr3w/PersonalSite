@@ -1,6 +1,12 @@
 language: node_js
 node_js:
- - "0.10"
+- '0.10'
 services:
- - mongodb
- 
+- mongodb
+deploy:
+  provider: heroku
+  api_key:
+    secure: ZXuewXxfFFWDwENLaxQ8pgAYSysuczh4z2fLKcddRBmUMIae2xodTetD2BdR7uufOFg1C3LHiua8DuqsR+OKFTSDdXBCb1RjYxJ4Vao6ehmFZILTWk4ccUzzz99nOEjmyWXhOITIdsAGqdaiklnpheEClpntwQJ2sAxkHtMW/y0=
+  app: lobos-personalsite
+  on:
+    repo: 4ndr3w/PersonalSite
