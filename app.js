@@ -51,6 +51,17 @@ app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
 
 
+// development only
+if ('development' == app.get('env')) {
+  app.use(express.errorHandler());
+  app.set("address", "127.0.0.1:3000");
+}
+else
+{
+	app.set("address", "andrew.lobos.me");
+}
+
+
 passport.serializeUser(function(user, done) {
   done(null, user.email);
 });
@@ -59,9 +70,10 @@ passport.deserializeUser(function(id, done) {
 	done(null, {"email": id, "isAdmin": userIsAdmin(id)});
 });
 
+siteURL = app.get("address");
 passport.use(new PassportGoogle({
-	returnURL: 'http://localhost:3000/login/return',
-	realm: 'http://localhost:3000/'
+	returnURL: 'http://'+siteURL+'/login/return',
+	realm: 'http://'+siteURL+'/'
 }, function (identifier, profile, done)
 {
 	var isAdmin = false;
@@ -81,15 +93,6 @@ passport.use(new PassportGoogle({
 		done("Account is not admin", {});
 }));
 
-// development only
-if ('development' == app.get('env')) {
-  app.use(express.errorHandler());
-  app.set("address", "127.0.0.1:3000");
-}
-else
-{
-	app.set("address", "andrew.lobos.me");
-}
 
 app.get('/', routes.index);
 app.get('/code', routes.code);
