@@ -10,7 +10,7 @@ var blog = require('./routes/blog');
 var admin = require('./routes/admin');
 var http = require('http');
 var path = require('path');
-var db = require("mongoose").connect('mongodb://localhost/personalsite');
+var db = require("mongoose").connect(process.env.MONGOPATH || 'mongodb://localhost/personalsite');
 
 var passport = require("passport");
 var PassportGoogle = require('passport-google').Strategy;
