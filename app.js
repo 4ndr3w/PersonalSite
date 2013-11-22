@@ -117,11 +117,6 @@ app.get("/admin/blog/edit/:id", admin.blog.edit);
 app.post("/admin/blog/update", admin.blog.update);
 
 
-app.get("/demo", function(req,res)
-{
-	res.send("hola");
-});
-
 app.get("/login", passport.authenticate("google"));
 app.get('/login/return', passport.authenticate('google', { successRedirect: '/admin', failureRedirect: '/failed' }));
 
