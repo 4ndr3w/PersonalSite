@@ -1,3 +1,8 @@
+<<<<<<< HEAD
 node_modules
 .idea
 build
+=======
+.DS_Store
+node_modules
+>>>>>>> ae2b91650dabecc0a6905bee6a14203be1cd4cda
