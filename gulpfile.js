@@ -1,14 +1,19 @@
 var gulp = require("gulp"),
     minifyInline = require('gulp-minify-inline'),
-    htmlmin = require('gulp-htmlmin'),
-    base64 = require('gulp-base64');
+    htmlmin = require('gulp-htmlmin');
 
 
-gulp.task("default", function()
+gulp.task("default", ['min-html', 'cpy-images']);
+
+gulp.task("min-html", function()
 {
-    gulp.src("src/index.html")
-        .pipe(base64("."))
+    gulp.src("src/*.html")
         .pipe(minifyInline())
         .pipe(htmlmin({collapseWhitespace: true}))
         .pipe(gulp.dest("build"));
+});
+
+gulp.task("cpy-images", function()
+{
+    gulp.src("src/*.png").pipe(gulp.dest("build"));
 });
