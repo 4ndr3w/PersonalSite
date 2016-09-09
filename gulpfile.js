@@ -1,9 +1,10 @@
 var gulp = require("gulp"),
     minifyInline = require('gulp-minify-inline'),
-    htmlmin = require('gulp-htmlmin');
+    htmlmin = require('gulp-htmlmin'),
+    exec = require('child_process').exec;
 
 
-gulp.task("default", ['min-html', 'cpy-images']);
+gulp.task("default", ['min-html', 'cpy-images', 'cpy-robot-images']);
 
 gulp.task("min-html", function()
 {
@@ -13,7 +14,20 @@ gulp.task("min-html", function()
         .pipe(gulp.dest("build"));
 });
 
-gulp.task("cpy-images", function()
+gulp.task("cpy-images", function(cb)
 {
-    gulp.src("src/*.png").pipe(gulp.dest("build"));
+    exec("cp src/*.png build/", function (err, stdout, stderr) {
+        console.log(stdout);
+        console.log(stderr);
+        cb(err);
+    });
+});
+
+gulp.task("cpy-robot-images", function(cb)
+{
+    exec("cp -r src/robotimages build/", function (err, stdout, stderr) {
+        console.log(stdout);
+        console.log(stderr);
+        cb(err);
+    });
 });
