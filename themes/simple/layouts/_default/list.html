@@ -1,7 +1,6 @@
 {{ partial "header.html" }}
 
-    {{ $paginator := .Paginate (where .Data.Pages.ByDate.Reverse "Type" "post") }}
-        {{ range $paginator.Pages }}
+    {{ range .Data.Pages.ByDate.Reverse }}
             <div>
                 <a href="{{ .Permalink }}"><h2>{{ .Title }}</h2></a>
                 <p>
@@ -9,15 +8,5 @@
                 </p>
                 <a class="btn" href="{{ .Permalink }}">Read more</a>
             </div>
-        {{ end }}
-
-        <div id="pagination">
-            {{ if .Paginator.HasPrev }}
-                <a href="{{ .Paginator.Prev.URL }}">Newer</a>
-            {{ end }}
-            {{ if .Paginator.HasPrev and .Paginator.HasNext }}-{{ end }}
-            {{ if .Paginator.HasNext }}
-                <a href="{{ .Paginator.Next.URL }}">Older</a>
-            {{ end }}
-        </div>
+    {{ end }}
 {{ partial "footer.html" }}
