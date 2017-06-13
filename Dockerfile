@@ -1,7 +1,7 @@
 FROM caddy
 
 COPY Caddyfile /app/Caddyfile
-COPY public /app/
+COPY public /app
 
 WORKDIR /app
 
