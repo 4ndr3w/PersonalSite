@@ -12,4 +12,4 @@ production:
     - docker rm $APPNAME
     - docker run -d --name $APPNAME -p 5000:5000 $APPNAME
   only:
-    - master
+    - hugo
