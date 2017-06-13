@@ -7,6 +7,12 @@ variables:
 production:
   type: deploy
   script:
+    - apk update
+    - apk add ca-certificates wget
+    - update-ca-certificates
+    - wget -O /hugo.tar.gz http://github.com/gohugoio/hugo/releases/download/v0.22.1/hugo_0.22.1_Linux-64bit.tar.gz
+    - tar -xf /hugo.tar.gz -C /
+    - /hugo
     - docker build -t $APPNAME .
     - docker stop $APPNAME
     - docker rm $APPNAME
