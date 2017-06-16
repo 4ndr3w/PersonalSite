@@ -135,6 +135,12 @@ img {
 	width: 100%;
 }
 
+.preview {
+	float: right;
+	width: 35%;
+	margin: 1px;
+}
+
 @media (max-width:450px) {
 	header .name {
 		display:block;

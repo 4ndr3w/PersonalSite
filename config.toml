@@ -2,3 +2,4 @@ baseURL = "http://172.16.0.11:5000/"
 languageCode = "en-us"
 title = "Andrew Lobos"
 theme = "simple"
+enableGitInfo = true
