@@ -141,6 +141,17 @@ img {
 	margin: 1px;
 }
 
+
+.oldProject a[class=btn] {
+	float: right;
+}
+
+.oldProject h3 {
+	border-bottom: none;
+	color: #343a40;
+}
+
+
 @media (max-width:450px) {
 	header .name {
 		display:block;

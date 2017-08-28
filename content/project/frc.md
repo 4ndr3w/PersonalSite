@@ -4,7 +4,7 @@ image: "/images/2014frc.jpg"
 date: "2017-01-01"
 ---
 
-I was the software lead and team co-captain on _FIRST_ Robotics Competition team TechFire 225 in high school, and I'm continuing to mentor the team as I go through college.
+I was the software lead and team co-captain on _FIRST_ Robotics Competition team TechFire 225 in high school, and I'm continuing to mentor as I go through college.
 
 <!--more-->
 

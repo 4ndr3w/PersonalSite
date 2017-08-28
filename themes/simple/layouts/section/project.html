@@ -1,0 +1,23 @@
+{{ partial "header.html" }}
+    {{ range .Data.Pages.ByDate.Reverse }}
+        <div>
+            <a href="{{ .Permalink }}"><h2>{{ .Title }}</h2></a>
+            {{ if isset .Params "image" }}<img class="preview" src="{{ .Params.image }}"></img>{{ end }}
+            <p>
+                {{.Summary}}
+            </p>
+            <a class="btn" href="{{ .Permalink }}">Read more</a>
+            <div style="clear: both;"></div> 
+        </div>
+    {{ end }}
+
+    <h2>Old Projects</h2>
+
+    {{ range where .Site.Pages "Type" "=" "oldproject" }}
+        <div class="oldProject">
+            <a class="btn" href="{{ .Permalink }}">Read more</a>
+            <a href="{{ .Permalink }}"><h3>{{ .Title }}</h3></a>
+        </div>
+    {{ end }}
+
+{{ partial "footer.html" }}
